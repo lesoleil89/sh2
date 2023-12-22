@@ -1,4 +1,4 @@
-REGION = 'europe'
+REGION = 'asia'
 AREA = 'albania'
 
 desc 'download source geospatial data to the place'
