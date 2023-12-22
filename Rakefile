@@ -1,9 +1,10 @@
 REGION = 'asia'
-AREA = 'albania'
+COUNTRY = 'japan'
+AREA = 'shikoku'
 
 desc 'download source geospatial data to the place'
 task :download do
-  u = "https://download.geofabrik.de/#{REGION}/{#{AREA}-latest.osm.pbf}"
+  u = "https://download.geofabrik.de/#{REGION}/#{COUNTRY}/{#{AREA}-latest.osm.pbf}"
   sh "curl -C - #{u} --output './src/#1'"
 end
 
@@ -30,6 +31,3 @@ task :style do
   File.write('docs/style.json', JSON.pretty_generate(style))
   sh "gl-style-validate docs/style.json"
 end
-
-# This Rakefile is a version of https://github.com/unvt/naru
-
